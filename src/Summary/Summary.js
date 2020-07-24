@@ -7,7 +7,7 @@ export default class Cart extends Component {
       const featureHash = feature + '-' + idx;
       const selectedOption = this.props.state.selected[feature];
       return (
-        <SummaryTotals key={idx} featureHash={featureHash} selectedOption={selectedOption} USCurrencyFormat={this.props.USCurrencyFormat}/>
+        <SummaryTotals key={idx} featureHash={featureHash} feature={feature} selectedOption={selectedOption} USCurrencyFormat={this.props.USCurrencyFormat}/>
       )
     });
 
