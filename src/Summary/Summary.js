@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import CartTotals from '../CartTotals/CartTotals';
+import SummaryTotals from '../SummaryTotals/SummaryTotals';
 
 export default class Cart extends Component {
   render() {
@@ -7,13 +7,7 @@ export default class Cart extends Component {
       const featureHash = feature + '-' + idx;
       const selectedOption = this.props.state.selected[feature];
       return (
-        <div className="summary__option" key={featureHash}>
-          <div className="summary__option__label">{feature}</div>
-          <div className="summary__option__value">{selectedOption.name}</div>
-          <div className="summary__option__cost">
-            {this.props.USCurrencyFormat.format(selectedOption.cost)}
-          </div>
-        </div>
+        <SummaryTotals key={idx} featureHash={featureHash} selectedOption={selectedOption} USCurrencyFormat={this.props.USCurrencyFormat}/>
       )
     });
 

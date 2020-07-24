@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import slugify from 'slugify';
 import Feature from '../Feature/Feature';
 
 export default class Features extends Component {
