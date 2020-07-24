@@ -43,7 +43,6 @@ class App extends Component {
   });
 
   render() {
-
     const total = Object.keys(this.state.selected).reduce(
       (acc, curr) => acc + this.state.selected[curr].cost,
       0
@@ -56,12 +55,12 @@ class App extends Component {
         <main>
           <form className="main__form">
             <h2>Customize your laptop</h2>
-            <Features features={this.props.features} USCurrencyFormat={this.USCurrencyFormat} state={this.state} updateFeature={this.updateFeature}/>
+            <Features features={this.props.features} USCurrencyFormat={this.USCurrencyFormat} state={this.state} updateFeature={this.updateFeature} />
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>
-            <Summary USCurrencyFormat={this.USCurrencyFormat} state={this.state}/>
-            <GrandTotal total={total} USCurrencyFormat={this.USCurrencyFormat}/>
+            <Summary USCurrencyFormat={this.USCurrencyFormat} state={this.state} />
+            <GrandTotal total={total} USCurrencyFormat={this.USCurrencyFormat} />
           </section>
         </main>
       </div>
