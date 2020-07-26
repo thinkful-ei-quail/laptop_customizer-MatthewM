@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Features from './Features/Features';
-import Summary from './Summary/Summary';
-import GrandTotal from './GrandTotal/GrandTotal';
+import MainForm from './MainForm/MainForm';
+import MainSummary from './MainSummary/MainSummary';
 
 import './App.css';
 
@@ -43,25 +42,14 @@ class App extends Component {
   });
 
   render() {
-    const total = Object.keys(this.state.selected).reduce(
-      (acc, curr) => acc + this.state.selected[curr].cost,
-      0
-    );
     return (
       <div className="App">
         <header>
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            <Features features={this.props.features} USCurrencyFormat={this.USCurrencyFormat} state={this.state} updateFeature={this.updateFeature} />
-          </form>
-          <section className="main__summary">
-            <h2>Your cart</h2>
-            <Summary USCurrencyFormat={this.USCurrencyFormat} state={this.state} />
-            <GrandTotal total={total} USCurrencyFormat={this.USCurrencyFormat} />
-          </section>
+          <MainForm state={this.state} USCurrencyFormat={this.USCurrencyFormat} updateFeature={this.updateFeature}/>
+          <MainSummary state={this.state} USCurrencyFormat={this.USCurrencyFormat} />
         </main>
       </div>
     );
